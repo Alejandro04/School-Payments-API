@@ -16,7 +16,7 @@ export class AppService {
   }
 
 
-  savePayment():Payment {
-    return this.airtableService.savePayment();
+  savePayment(payment: Payment):Payment {
+    return this.airtableService.savePayment(payment);
   }
 }

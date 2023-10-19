@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Payment } from './payment.interface';
 
@@ -11,7 +11,8 @@ export class AppController {
     return this.appService.getPayments();
   }
 
-  savePayment(): Payment {
-    return this.appService.savePayment();
+  @Post()
+  savePayment(@Body() payment: Payment): Payment {
+    return this.appService.savePayment(payment);
   }
 }

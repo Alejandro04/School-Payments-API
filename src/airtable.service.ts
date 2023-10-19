@@ -49,24 +49,22 @@ export class AirtableService {
     this.payments = payments;
   }
 
-  // TODO: Mock data
-  savePayment() {
-    let payment: Payment;
-
+  savePayment(payment: Payment) {
     base('payments').create([
       {
         "fields": {
-          "date": "2023-10-09",
-          "amount": 22
+          "date": payment.date,
+          "amount": payment.amount,
+          "currency": payment.currency
         }
       },
 
-    ], function (err, records) {
+    ], (err, records) => {
       if (err) {
         console.error(err);
         return;
       }
-      records.forEach(function (record) {
+      records.forEach((record) => {
         console.log(record.getId());
         payment = {
           id: record.getId(),
