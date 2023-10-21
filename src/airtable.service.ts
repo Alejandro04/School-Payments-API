@@ -8,10 +8,10 @@ import { ConfigService } from '@nestjs/config';
 var Airtable = require('airtable');
 Airtable.configure({
   endpointUrl: 'https://api.airtable.com',
-  apiKey: ''
+  apiKey: process.env.AIRTABLE_APIKEY
 });
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const base = Airtable.base('');
+const base = Airtable.base(process.env.AIRTABLE_BASE);
 
 export class AirtableService {
   private payments: Payment[] = [];
