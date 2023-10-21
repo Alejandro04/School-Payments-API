@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank">https://school-payments-api-a4pg.vercel.app/</a>
+  <a href="https://school-payments-api-a4pg.vercel.app/" target="_blank">https://school-payments-api-a4pg.vercel.app/</a>
 </p>
 
 <p align="center">
